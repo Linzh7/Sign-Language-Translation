@@ -2,9 +2,10 @@ import mediapipe as mp
 import cv2
 from handsdetect import HandsDetector
 import csv
+import labelmap
 
-label = 'flat'
-
+label = 'good'
+label_num = labelmap.label_map['label']
 
 def main():
     cap = cv2.VideoCapture(0)
@@ -43,7 +44,7 @@ def main():
             elif k == -1:
                 continue
             elif k == 32:
-                result += [label]
+                result += [label_num]
                 results_list.append(result)
         writer.writerows(results_list)
 
