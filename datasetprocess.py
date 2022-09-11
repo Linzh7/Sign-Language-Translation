@@ -11,6 +11,7 @@ with open('./train.csv', 'w') as train_file, open('./test.csv', 'w') as test_fil
             continue
         with open(os.path.join(path, file), 'r') as read_file:
             records = read_file.readlines()
+            records[-1] += '\n'
             train, test= train_test_split(records, test_size=0.25)
             train_file.writelines(train)
             test_file.writelines(test)
