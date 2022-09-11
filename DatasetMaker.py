@@ -1,11 +1,9 @@
-import re
-import time
 import mediapipe as mp
 import cv2
-from HandsDetect import HandsDetector
+from handsdetect import HandsDetector
 import csv
 
-label = 'good'
+label = 'flat'
 
 
 def main():
@@ -19,7 +17,7 @@ def main():
 
     detector = HandsDetector()
 
-    with open(f'./dataset/{label}.csv', 'w+') as file:
+    with open(f'./dataset/{label}.csv', 'x') as file:
         writer = csv.writer(file)
         results_list = []
         while cap.isOpened():
@@ -45,6 +43,7 @@ def main():
             elif k == -1:
                 continue
             elif k == 32:
+                result += [label]
                 results_list.append(result)
         writer.writerows(results_list)
 
