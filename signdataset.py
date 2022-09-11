@@ -9,4 +9,4 @@ class SignDataset():
         return len(self.data)
 
     def __getitem__(self, index):
-        return self.data[index, :-1], self.data[index, -1]
+        return self.data[index, :-1], int(self.data[index, -1])
