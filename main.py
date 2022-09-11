@@ -15,7 +15,7 @@ def main():
         if not ok:
             print("[Detcetor] Ignoring empty camera frame.")
             continue
-        detector.hand_detect(img)
+        result = detector.hand_detect(img)
 
         time.sleep(20)
 
