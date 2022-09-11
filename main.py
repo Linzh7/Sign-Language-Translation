@@ -1,6 +1,6 @@
 import time
 import cv2
-from HandsDetect import HandsDetector
+from handsdetect import HandsDetector
 
 
 def main():
