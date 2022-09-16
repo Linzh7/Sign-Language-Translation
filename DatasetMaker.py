@@ -5,7 +5,8 @@ import csv
 import labelmap
 
 label = 'good'
-label_num = labelmap.label_map['label']
+label_num = labelmap.label_map[label]
+
 
 def main():
     cap = cv2.VideoCapture(0)
