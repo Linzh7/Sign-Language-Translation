@@ -1,0 +1,7 @@
+mediapipe
+numpy
+opencv-python
+torch
+torchaudio
+torchvision
+scikit-learn
