@@ -4,7 +4,7 @@ from handsdetect import HandsDetector
 import csv
 import labelmap
 
-label = 'good'
+label = 'bad'
 label_num = labelmap.label_map[label]
 
 

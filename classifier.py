@@ -1,7 +1,9 @@
 import torch.nn as nn
 import torch.nn.functional as F
 
+
 class Classifier(nn.Module):
+
     def __init__(self, class_num, drop_out_rate=0.25):
         super(Classifier, self).__init__()
         self.dropout = nn.Dropout(drop_out_rate)
