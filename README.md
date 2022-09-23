@@ -36,7 +36,7 @@ Make sure that u install all libraries.
 
 We also provide a `requirements.txt` for pip. Use the following command to install.
 
-``pip install -r /path/to/requirements.txt``
+``pip install -r requirements.txt``
 
 NB: If you are using Macbook with Apple silicon, you can install `mediapipe-silicon` instead of `mediapipe`, but they said that mediapipe will support Apple silicon soon.
 
