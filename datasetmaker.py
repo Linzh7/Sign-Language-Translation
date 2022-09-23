@@ -1,6 +1,6 @@
 import mediapipe as mp
 import cv2
-from handsdetect import HandsDetector
+from handsdetector import HandsDetector
 import csv
 import labelmap
 
@@ -19,7 +19,7 @@ def main():
 
     detector = HandsDetector()
 
-    with open(f'./dataset/{label}.csv', 'x') as file:
+    with open(f'./dataset/{label}.csv', 'a+') as file:
         writer = csv.writer(file)
         results_list = []
         while cap.isOpened():

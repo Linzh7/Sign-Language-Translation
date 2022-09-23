@@ -3,6 +3,7 @@ import numpy as np
 
 
 class HandsDetector():
+
     def __init__(self):
         print('[Detcetor] init.')
         self.detector = mp.solutions.hands.Hands(static_image_mode=False,
@@ -15,33 +16,26 @@ class HandsDetector():
         print('[Detcetor] Start processing an image.', end='')
         img.flags.writeable = False
         hands_landmarks = self.detector.process(img).multi_hand_landmarks
-        self.landmarks = hands_landmarks
+        # self.landmarks = hands_landmarks
 
         two_hands_landmarks = []
         if hands_landmarks != None:
             for one_hand_landmarks in hands_landmarks:
                 for _, info in enumerate(one_hand_landmarks.landmark):
                     two_hands_landmarks.append([info.x, info.y, info.z])
-                # landmarks = np.array(landmarks)
-                # centered_landmarks.append(
-                #     (landmarks - np.mean(landmarks, axis=0)).tolist())
 
             landmarks = np.array(two_hands_landmarks)
             centered_landmarks = ((landmarks - np.mean(landmarks, axis=0)))
             rescaled_landmarks = (
                 centered_landmarks *
                 (1 / centered_landmarks.max())).flatten('C').tolist()
-            # rescaled_landmarks = (centered_landmarks *
-            #                       (1 / centered_landmarks.max())).tolist()
             if landmarks.shape == (21, 3):
                 rescaled_landmarks += [0, 0, 0] * 21
-                # rescaled_landmarks += [[0, 0, 0]] * 21
             print(' Done')
             return rescaled_landmarks
         else:
             print(' No hand detected.')
             return []
-        # print(centered_landmarks)
 
 
 if __name__ == '__main__':

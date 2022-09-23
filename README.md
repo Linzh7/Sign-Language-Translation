@@ -14,7 +14,7 @@ This project is aimed to recognize and classify sign language, then translate it
 │   └── foo.csv
 ├── datasetmaker.py - use this to create datasets
 ├── datasetprocess.py - use this to combine datasets and split them in to train.csv and test.csv
-├── handsdetect.py - class of keypoint detection
+├── handsdetector.py - class of keypoint detection
 ├── labelmap.py - add the sign you want to classify and their index here
 ├── main.py - you should run this to do the translation
 ├── models - storage the models we trained
