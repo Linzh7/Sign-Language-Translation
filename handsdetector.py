@@ -13,7 +13,7 @@ class HandsDetector():
                                                  min_tracking_confidence=0.5)
 
     def hand_detect(self, img):
-        print('[Detcetor] Start processing an image.', end='')
+        # print('[Detcetor] Start processing an image.', end='')
         img.flags.writeable = False
         hands_landmarks = self.detector.process(img).multi_hand_landmarks
         # self.landmarks = hands_landmarks
@@ -31,11 +31,11 @@ class HandsDetector():
                 (1 / centered_landmarks.max())).flatten('C').tolist()
             if landmarks.shape == (21, 3):
                 rescaled_landmarks += [0, 0, 0] * 21
-            print(' Done')
+            # print(' Done')
             return rescaled_landmarks
         else:
-            print(' No hand detected.')
-            return []
+            # print(' No hand detected.')
+            return [0] * 126
 
 
 if __name__ == '__main__':
