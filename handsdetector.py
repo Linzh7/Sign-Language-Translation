@@ -16,7 +16,7 @@ class HandsDetector():
         # print('[Detcetor] Start processing an image.', end='')
         img.flags.writeable = False
         hands_landmarks = self.detector.process(img).multi_hand_landmarks
-        # self.landmarks = hands_landmarks
+        self.landmarks = hands_landmarks
 
         two_hands_landmarks = []
         if hands_landmarks != None:

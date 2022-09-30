@@ -4,7 +4,7 @@ from handsdetector import HandsDetector
 import csv
 import labelmap
 
-label = 'bad'
+label = 'good'
 label_num = labelmap.label_map[label]
 
 
@@ -29,7 +29,7 @@ def main():
                 continue
             result = detector.hand_detect(img)
             # img = cv2.cvtColor(img, cv2.COLOR_RGB2BGR)
-            if result:
+            if sum(result) != 0:
                 for hand_landmarks in detector.landmarks:
                     mp_drawing.draw_landmarks(
                         img, hand_landmarks, mp_hands.HAND_CONNECTIONS,
