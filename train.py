@@ -37,7 +37,7 @@ def train(epoch):
         loss.backward()
         optimizer.step()
         if batch_index % 500 == 0:
-            print('Train Epoch: {} [{}/{} ({:.0f}%)]\tLoss: {:.6f}'.format(
+            print('[Train] Epoch: {} [{}/{} ({:.0f}%)]\tLoss: {:.6f}'.format(
                 epoch, batch_index * len(data), len(train_dataloader.dataset),
                 100. * batch_index / len(train_dataloader), loss.item()))
             train_losses.append(loss.item())
@@ -59,12 +59,13 @@ def test():
             correct += pred.eq(target.data.view_as(pred)).sum()
     test_loss /= len(test_dataloader.dataset)
     test_losses.append(test_loss)
-    print('\nTest set: Avg. loss: {:.4f}, Accuracy: {}/{} ({:.0f}%)\n'.format(
+    print('[Test] Avg loss: {:.4f}, Accuracy: {}/{} ({:.0f}%)\n'.format(
         test_loss, correct, len(test_dataloader.dataset),
         100. * correct / len(test_dataloader.dataset)))
 
 
-test()
-for epoch in range(1, N_EPOCHS + 1):
-    train(epoch)
+if __name__ == '__main__':
     test()
+    for epoch in range(1, N_EPOCHS + 1):
+        train(epoch)
+        test()
