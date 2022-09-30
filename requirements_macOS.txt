@@ -6,4 +6,5 @@ torchaudio
 torchvision
 scikit-learn
 tqdm
+pyobjc
 playsound==1.2.2

@@ -38,7 +38,7 @@ We also provide a `requirements.txt` for pip. Use the following command to insta
 
 ``pip install -r requirements.txt``
 
-NB: If you are using Macbook with Apple silicon, you can install `mediapipe-silicon` instead of `mediapipe`, but they said that mediapipe will support Apple silicon soon.
+NB: If you are using Macbook with Apple silicon, you can install `mediapipe-silicon` instead of `mediapipe`, but they said that mediapipe will support Apple silicon soon. And use `requirements_maxOS.txt` instead of `requirements.txt`.
 
 ### Make dataset
 
