@@ -1,4 +1,3 @@
-from functools import cache
 import train
 import cv2
 from handsdetector import HandsDetector
