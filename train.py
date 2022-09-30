@@ -3,10 +3,11 @@ from torch.utils.data import DataLoader
 import torch.nn.functional as F
 import signdataset
 import classifier
+import labelmap
 import torch.optim as optim
 
-CLASS_NUM = 2
-N_EPOCHS = 3
+CLASS_NUM = len(labelmap.label_map)
+N_EPOCHS = 10
 DROP_OUT_RATE = 0.25
 
 train_dataloader = DataLoader(signdataset.SignDataset('./train.csv'),
