@@ -15,7 +15,7 @@ media_list = [
     "./media/horns.mp3", "./media/victory.mp3"
 ]
 
-THRESHOLD = -0.07  # log10(0.85)
+THRESHOLD = -0.02  # log10(0.95)
 
 
 def main():
@@ -50,7 +50,7 @@ def main():
             inference = net(result).tolist()
             inference_index = inference.index(max(inference))
             if inference[inference_index] > THRESHOLD:
-                # print(inference[inference_index])
+                # print(list(map(lambda x: 10**x, inference)))
                 print(labelmap.reversed_map[inference_index])
                 queue.get()
                 queue.put(inference_index)
