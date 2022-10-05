@@ -59,4 +59,9 @@ NB: If you are using Macbook with Apple silicon, you can install `mediapipe-sili
 
 ### Use model to predict
 
-*working on it :)*
+1. run `main.py`
+2. act some sign to the camera
+3. after the program comfirm your sign, it will play the corresponding English word
+4. enjoy
+
+*If you do not like the Preview window, you can set`SHOW = False`*
