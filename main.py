@@ -10,10 +10,9 @@ import playsound
 
 SHOW = True
 
-media_list = [
-    "./media/good.mp3", "./media/bad.mp3", "./media/timeout.mp3",
-    "./media/horns.mp3", "./media/victory.mp3"
-]
+media_list = []
+for k, v in labelmap.label_map.items():
+    media_list.append(f'./media/{k}.mp3')
 
 THRESHOLD = -0.02  # log10(0.95)
 
@@ -65,6 +64,14 @@ def main():
                         img, hand_landmarks, mp_hands.HAND_CONNECTIONS,
                         mp_drawing_styles.get_default_hand_landmarks_style(),
                         mp_drawing_styles.get_default_hand_connections_style())
+                (w, h), _ = cv2.getTextSize(
+                    labelmap.reversed_map[inference_index],
+                    cv2.FONT_HERSHEY_SIMPLEX, 2, 5)
+                img = cv2.rectangle(img, (20, 0), (20 + w, 70),
+                                    (255, 255, 255), -1)
+                img = cv2.putText(img, labelmap.reversed_map[inference_index],
+                                  (20, 50), cv2.FONT_HERSHEY_SIMPLEX, 2,
+                                  (0, 0, 0), 5, cv2.LINE_AA)
                 cv2.imshow('MediaPipe Hands', img)
                 cv2.waitKey(1)
 
