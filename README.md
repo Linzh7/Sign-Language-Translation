@@ -2,7 +2,7 @@
 
 This project is aimed to recognize and classify sign language, then translate it into spoken language.
 
-NB: This repo do not contain any data or model. If you want to use, please follow the steps [below](#How to get start).
+NB: This repo do not contain any data or model. If you want to use, please follow the steps [below](#how-to-get-start).
 
 
 ## Stucture of project
